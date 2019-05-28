@@ -12,6 +12,7 @@
 		FA12155F229DB98A0092DF67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA12155E229DB98A0092DF67 /* Assets.xcassets */; };
 		FA121562229DB98A0092DF67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA121560229DB98A0092DF67 /* LaunchScreen.storyboard */; };
 		FA12156A229DBB0F0092DF67 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA121569229DBB0F0092DF67 /* TableViewController.swift */; };
+		FA12156C229DBFE40092DF67 /* PictureViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12156B229DBFE40092DF67 /* PictureViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		FA121561229DB98A0092DF67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA121563229DB98A0092DF67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA121569229DBB0F0092DF67 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		FA12156B229DBFE40092DF67 /* PictureViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				FA121557229DB9880092DF67 /* AppDelegate.swift */,
 				FA121569229DBB0F0092DF67 /* TableViewController.swift */,
+				FA12156B229DBFE40092DF67 /* PictureViewCell.swift */,
 				FA12155B229DB9880092DF67 /* Main.storyboard */,
 				FA12155E229DB98A0092DF67 /* Assets.xcassets */,
 				FA121560229DB98A0092DF67 /* LaunchScreen.storyboard */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA12156C229DBFE40092DF67 /* PictureViewCell.swift in Sources */,
 				FA121558229DB9880092DF67 /* AppDelegate.swift in Sources */,
 				FA12156A229DBB0F0092DF67 /* TableViewController.swift in Sources */,
 			);
