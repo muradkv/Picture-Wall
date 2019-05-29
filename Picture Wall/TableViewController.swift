@@ -12,6 +12,7 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        addRightBarButtonItem()
     }
 
     // MARK: - Table view data source
@@ -37,5 +38,14 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
+    
+    //MARK: - UI
+    
+    func addRightBarButtonItem() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewPicture))
+    }
 
+    @objc func addNewPicture() {
+        
+    }
 }
