@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA10CE0422A1C9A600499DDD /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10CE0322A1C9A600499DDD /* Picture.swift */; };
 		FA121558229DB9880092DF67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA121557229DB9880092DF67 /* AppDelegate.swift */; };
 		FA12155D229DB9880092DF67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA12155B229DB9880092DF67 /* Main.storyboard */; };
 		FA12155F229DB98A0092DF67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA12155E229DB98A0092DF67 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA10CE0322A1C9A600499DDD /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
 		FA121554229DB9880092DF67 /* Picture Wall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Picture Wall.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA121557229DB9880092DF67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA12155C229DB9880092DF67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				FA121557229DB9880092DF67 /* AppDelegate.swift */,
 				FA121569229DBB0F0092DF67 /* TableViewController.swift */,
 				FA12156B229DBFE40092DF67 /* PictureViewCell.swift */,
+				FA10CE0322A1C9A600499DDD /* Picture.swift */,
 				FA12155B229DB9880092DF67 /* Main.storyboard */,
 				FA12155E229DB98A0092DF67 /* Assets.xcassets */,
 				FA121560229DB98A0092DF67 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA10CE0422A1C9A600499DDD /* Picture.swift in Sources */,
 				FA12156C229DBFE40092DF67 /* PictureViewCell.swift in Sources */,
 				FA121558229DB9880092DF67 /* AppDelegate.swift in Sources */,
 				FA12156A229DBB0F0092DF67 /* TableViewController.swift in Sources */,
