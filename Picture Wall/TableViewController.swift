@@ -9,6 +9,9 @@
 import UIKit
 
 class TableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    var pictureArray = [Picture]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,18 +22,24 @@ class TableViewController: UITableViewController, UIImagePickerControllerDelegat
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return pictureArray.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PictureCell", for: indexPath) as? PictureViewCell else {
+            fatalError("Unable to dequeuePersonCell")
+        }
+        
+        cell.textOnLabel.text = pictureArray[indexPath.row].pictureName
+        
+        let path = getDocumentsDirectory().appendingPathComponent(pictureArray[indexPath.row].image)
+        cell.picture.image = UIImage.init(contentsOfFile: path.path)
 
         return cell
     }
@@ -66,6 +75,10 @@ class TableViewController: UITableViewController, UIImagePickerControllerDelegat
         if let jpegData = image.jpegData(compressionQuality: 0.8) {
             try? jpegData.write(to: imagePath)
         }
+        
+        let picture = Picture(pictureName: "Unknown", image: imageName)
+        pictureArray.append(picture)
+        tableView.reloadData()
         
         dismiss(animated: true)
     }

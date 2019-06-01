@@ -48,8 +48,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="image" destination="PVW-kE-fPP" id="gDQ-Bh-Zlw"/>
-                                    <outlet property="text" destination="xZy-jB-gFl" id="yxE-lw-eH9"/>
+                                    <outlet property="picture" destination="PVW-kE-fPP" id="HpS-5T-JMo"/>
+                                    <outlet property="textOnLabel" destination="xZy-jB-gFl" id="exq-YS-g4A"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
