@@ -16,6 +16,8 @@ class TableViewController: UITableViewController, UIImagePickerControllerDelegat
         super.viewDidLoad()
 
         addRightBarButtonItem()
+        
+        loadPicture()
     }
 
     // MARK: - Table view data source
@@ -81,10 +83,37 @@ class TableViewController: UITableViewController, UIImagePickerControllerDelegat
         tableView.reloadData()
         
         dismiss(animated: true)
+        
+        savePicture()
     }
     
     func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
     }
+    
+    func savePicture() {
+        let jsonEncoder = JSONEncoder()
+        if let savedData = try? jsonEncoder.encode(pictureArray) {
+            let defaults = UserDefaults.standard
+            defaults.set(savedData, forKey: "people")
+        } else {
+            print("Failed to save people.")
+        }
+    }
+    
+    func loadPicture() {
+        let defaults = UserDefaults.standard
+        
+        if let savedPeople = defaults.object(forKey: "people") as? Data {
+            let jsonDecoder = JSONDecoder()
+            
+            do {
+                pictureArray = try jsonDecoder.decode([Picture].self, from: savedPeople)
+            } catch {
+                print("Failed to load people")
+            }
+        }
+    }
+    
 }
