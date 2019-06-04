@@ -9,10 +9,21 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    @IBOutlet var imageView: UIImageView!
+    
+    var selectedPicture: URL?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loadPicture()
 
+    }
+    
+    func loadPicture() {
+        if let imageLoad = selectedPicture {
+            imageView.image = UIImage(named: imageLoad.path)
+        }
     }
 
 }

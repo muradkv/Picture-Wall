@@ -47,7 +47,10 @@ class TableViewController: UITableViewController, UIImagePickerControllerDelegat
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
+            vc.selectedPicture = getDocumentsDirectory().appendingPathComponent(pictureArray[indexPath.row].image)
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     //MARK: - UI
