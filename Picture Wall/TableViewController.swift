@@ -53,6 +53,18 @@ class TableViewController: UITableViewController, UIImagePickerControllerDelegat
         }
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if (editingStyle == .delete) {
+            pictureArray.remove(at: indexPath.row)
+            tableView.beginUpdates()
+            tableView.deleteRows(at: [indexPath], with: .middle)
+            tableView.endUpdates()
+            savePicture()
+        }
+        
+    }
+    
     //MARK: - UI
     
     func addRightBarButtonItem() {
