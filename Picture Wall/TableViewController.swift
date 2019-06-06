@@ -11,6 +11,7 @@ import UIKit
 class TableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var pictureArray = [Picture]()
+    var textPicture = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,11 +94,13 @@ class TableViewController: UITableViewController, UIImagePickerControllerDelegat
             try? jpegData.write(to: imagePath)
         }
         
-        let picture = Picture(pictureName: "Unknown", image: imageName)
+        dismiss(animated: true)
+        
+        addPictureText()
+        
+        let picture = Picture(pictureName: textPicture, image: imageName)
         pictureArray.append(picture)
         tableView.reloadData()
-        
-        dismiss(animated: true)
         
         savePicture()
     }
@@ -131,4 +134,17 @@ class TableViewController: UITableViewController, UIImagePickerControllerDelegat
         }
     }
     
+    func addPictureText() {
+        let ac = UIAlertController(title: "Add text for picture", message: nil, preferredStyle: .alert)
+        ac.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Text"
+        }
+        ac.addAction(UIAlertAction(title: "Add", style: .default, handler: { [weak self, weak ac] action in
+            guard let item = ac?.textFields?[0].text else { return }
+            
+            self?.textPicture = item
+        }))
+        present(ac, animated: true)
+    }
+ 
 }
